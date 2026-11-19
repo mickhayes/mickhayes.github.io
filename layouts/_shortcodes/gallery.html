@@ -1,0 +1,44 @@
+{{- /*
+  Photo gallery: a thumbnail grid that opens a full-screen lightbox (GLightbox).
+
+  Put the photos in the same folder as the post's index.md (a "page bundle"),
+  then write:
+
+    {{< gallery >}}                          all images in the bundle, by filename
+    {{< gallery match="trip/*" >}}           only images matching a pattern
+    {{< gallery match="*.jpg" thumb="300x300" >}}
+
+  Captions come from the post's front matter, e.g.
+
+    resources:
+      - src: "trip/IMG_0042.jpg"
+        title: "Sunset over the harbour"
+
+  Thumbnails and full-size versions are resized by Hugo at build time, so the
+  originals can be large camera files.
+*/ -}}
+{{- $match := .Get "match" | default "**.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}" -}}
+{{- $thumb := .Get "thumb" | default "600x600" -}}
+{{- $full := .Get "full" | default "2000x2000" -}}
+{{- $images := .Page.Resources.Match $match -}}
+{{- $id := printf "gallery-%d" .Ordinal -}}
+{{- with $images }}
+<div class="gallery" id="{{ $id }}">
+  {{- range sort . "Name" }}
+    {{- if eq .ResourceType "image" }}
+      {{- $img := . | images.Filter images.AutoOrient -}}
+      {{- $small := $img.Fill (printf "%s webp q78 Center" $thumb) -}}
+      {{- $large := $img.Fit (printf "%s webp q82" $full) -}}
+      {{- $caption := "" -}}
+      {{- if ne .Title .Name }}{{ $caption = .Title }}{{ end -}}
+      <a class="gallery-item glightbox" href="{{ $large.RelPermalink }}"
+         data-gallery="{{ $id }}"{{ with $caption }} data-title="{{ . }}"{{ end }}>
+        <img src="{{ $small.RelPermalink }}" width="{{ $small.Width }}" height="{{ $small.Height }}"
+             alt="{{ $caption | default .Name }}" loading="lazy" decoding="async">
+      </a>
+    {{- end }}
+  {{- end }}
+</div>
+{{- else }}
+  {{- warnf "gallery shortcode: no images matching %q in %s" $match .Page.File.Path -}}
+{{- end }}

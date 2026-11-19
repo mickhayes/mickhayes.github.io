@@ -1,0 +1,69 @@
+baseURL = 'https://mickhayes.github.io/'
+locale = 'en-us'
+title = 'Michael Hayes'
+theme = 'PaperMod'
+
+enableRobotsTXT = true
+
+[pagination]
+  pagerSize = 10
+
+[outputs]
+  # JSON output powers the PaperMod search page.
+  home = ['HTML', 'RSS', 'JSON']
+
+[params]
+  env = 'production'
+  mainSections = ['posts', 'photos'] # sections listed on the home page
+  description = 'Software development, notes and photos.'
+  author = 'Michael Hayes'
+  defaultTheme = 'auto'      # follow the visitor's light/dark preference
+  ShowReadingTime = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowToc = false
+
+  # Comments are switched off site-wide. layouts/_partials/comments.html is
+  # also overridden with an empty file, so no comment widget can render.
+  comments = false
+
+  [params.homeInfoParams]
+    Title = "Hi, I'm Michael"
+    Content = 'Software development, notes and photos.'
+
+  [[params.socialIcons]]
+    name = 'github'
+    url = 'https://github.com/mickhayes'
+
+[menus]
+  [[menus.main]]
+    name = 'Posts'
+    pageRef = '/posts'
+    weight = 10
+  [[menus.main]]
+    name = 'Photos'
+    pageRef = '/photos'
+    weight = 20
+  [[menus.main]]
+    name = 'Archive'
+    pageRef = '/archives'
+    weight = 30
+  [[menus.main]]
+    name = 'Search'
+    pageRef = '/search'
+    weight = 40
+  [[menus.main]]
+    name = 'About'
+    pageRef = '/about'
+    weight = 50
+
+[markup.goldmark.renderer]
+  unsafe = false
+
+[imaging]
+  resampleFilter = 'Lanczos'
+  [imaging.jpeg]
+    quality = 82
+  [imaging.webp]
+    quality = 82

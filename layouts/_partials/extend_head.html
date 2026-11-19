@@ -1,0 +1,16 @@
+{{- /* Gallery grid styles (small, on every page). */ -}}
+{{- $css := resources.Get "css/gallery.css" | minify | fingerprint -}}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+
+{{- /* The GLightbox lightbox loads only on pages that use the gallery shortcode. */ -}}
+{{- if .HasShortcode "gallery" }}
+  {{- $lbCss := resources.Get "glightbox/glightbox.min.css" | fingerprint -}}
+  {{- $lbJs := resources.Get "glightbox/glightbox.min.js" | fingerprint -}}
+  <link rel="stylesheet" href="{{ $lbCss.RelPermalink }}" integrity="{{ $lbCss.Data.Integrity }}">
+  <script defer src="{{ $lbJs.RelPermalink }}" integrity="{{ $lbJs.Data.Integrity }}"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      GLightbox({ selector: '.glightbox', loop: true, touchNavigation: true });
+    });
+  </script>
+{{- end }}
