@@ -8,6 +8,9 @@ summary = 'Things spotted out and about.'
   src = 'photos/banana.jpg'
   title = 'A Fyffes banana, well past its best'
 [[resources]]
+  src = 'photos/dropped-99.jpg'
+  title = 'A 99 that scored zero.'
+[[resources]]
   src = 'photos/knock-arrivals.jpg'
   title = 'Welcome to kNOCk or maybe not Knock.'
 [[resources]]
