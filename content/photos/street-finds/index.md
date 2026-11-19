@@ -9,7 +9,7 @@ summary = 'Things spotted out and about.'
   title = 'A Fyffes banana, well past its best'
 [[resources]]
   src = 'photos/dropped-99.jpg'
-  title = 'A 99 that scored zero.'
+  title = 'Terrain!, Terrain!...'
 [[resources]]
   src = 'photos/knock-arrivals.jpg'
   title = 'Welcome to kNOCk or maybe not Knock.'
