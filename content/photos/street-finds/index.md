@@ -2,11 +2,14 @@
 title = 'Street finds'
 date = 2026-11-19
 tags = ['photos']
-summary = 'Things spotted at ground level.'
+summary = 'Things spotted out and about.'
 
 [[resources]]
   src = 'photos/banana.jpg'
   title = 'A Fyffes banana, well past its best'
+[[resources]]
+  src = 'photos/knock-arrivals.jpg'
+  title = 'Welcome to kNOCk or maybe not Knock.'
 [[resources]]
   src = 'photos/well-earthed.jpg'
   title = 'Well earthed'
