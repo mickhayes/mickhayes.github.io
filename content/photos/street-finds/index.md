@@ -6,7 +6,7 @@ summary = 'Things spotted out and about.'
 
 [[resources]]
   src = 'photos/banana.jpg'
-  title = 'A Fyffes banana, well past its best'
+  title = 'The value of branding'
 [[resources]]
   src = 'photos/dropped-99.jpg'
   title = 'Terrain!, Terrain!...'
