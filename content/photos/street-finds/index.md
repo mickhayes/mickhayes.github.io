@@ -14,6 +14,9 @@ summary = 'Things spotted out and about.'
   src = 'photos/knock-arrivals.jpg'
   title = 'Welcome to kNOCk...maybe.'
 [[resources]]
+  src = 'photos/moth.jpg'
+  title = 'Durham'
+[[resources]]
   src = 'photos/well-earthed.jpg'
   title = 'Well earthed'
 +++
