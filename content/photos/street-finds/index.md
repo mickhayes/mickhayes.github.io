@@ -12,7 +12,7 @@ summary = 'Things spotted out and about.'
   title = 'Terrain!, Terrain!...'
 [[resources]]
   src = 'photos/knock-arrivals.jpg'
-  title = 'Welcome to kNOCk or maybe not Knock.'
+  title = 'Welcome to kNOCk...maybe.'
 [[resources]]
   src = 'photos/well-earthed.jpg'
   title = 'Well earthed'
