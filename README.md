@@ -41,9 +41,7 @@ hugo new content photos/my-trip
 Copy the photos into `content/photos/my-trip/photos/`. The page already contains
 `{{< gallery match="photos/*" >}}`. Hugo makes thumbnails and full-size web versions
 at build time, so full-resolution camera files are fine. Captions are optional and go
-in the front matter (see `content/photos/sample-gallery/index.md`).
-
-Delete `content/photos/sample-gallery/` once you have real galleries.
+in the front matter (see `content/photos/street-finds/index.md`).
 
 ## Notes
 
