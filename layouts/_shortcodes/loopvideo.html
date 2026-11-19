@@ -1,0 +1,17 @@
+{{- /*
+  A silent, auto-playing, looping video (like an animated GIF, but much smaller).
+
+    {{< loopvideo src="spin.mp4" poster="spin.jpg" caption="Optional caption" >}}
+
+  src and poster are files in the same folder as the post (page bundle).
+*/ -}}
+{{- $src := .Get "src" -}}
+{{- $video := .Page.Resources.Get $src -}}
+{{- if not $video }}{{ errorf "loopvideo: %q not found next to %s" $src .Page.File.Path }}{{ end -}}
+{{- $poster := "" -}}
+{{- with .Get "poster" }}{{ with $.Page.Resources.Get . }}{{ $poster = . }}{{ end }}{{ end -}}
+<figure class="loopvideo">
+  <video src="{{ $video.RelPermalink }}"{{ with $poster }} poster="{{ .RelPermalink }}"{{ end }}
+         autoplay muted loop playsinline preload="metadata"></video>
+  {{- with .Get "caption" }}<figcaption>{{ . }}</figcaption>{{ end }}
+</figure>

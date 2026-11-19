@@ -31,3 +31,26 @@
 @media (prefers-reduced-motion: reduce) {
   .gallery-item img { transition: none; }
 }
+
+/* Looping video (loopvideo shortcode) */
+.loopvideo {
+  margin: 1.5rem 0;
+}
+
+.loopvideo video {
+  display: block;
+  width: 100%;
+  max-width: 720px;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
+  border-radius: var(--radius, 6px);
+  background: #05070b;
+}
+
+.loopvideo figcaption {
+  text-align: center;
+  font-size: 0.9em;
+  color: var(--secondary);
+  margin-top: 0.5rem;
+}
